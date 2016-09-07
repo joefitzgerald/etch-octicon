@@ -1,13 +1,12 @@
 {
-  "name": "react-octicon",
-  "version": "2.0.0",
-  "description": "A GitHub Octicons icon React component",
+  "name": "etch-octicon",
+  "version": "0.0.1",
+  "description": "A GitHub Octicons icon Etch component",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "nwb build",
-    "lint": "eslint src tests demo/src",
-    "test": "npm run lint && nwb test",
-    "start": "nwb serve"
+    "build": "babel src -d lib",
+    "lint": "standard src tests",
+    "test": "npm run lint"
   },
   "files": [
     "css",
@@ -18,27 +17,31 @@
     "url": "https://github.com/insin/react-octicon"
   },
   "keywords": [
-    "react-component",
+    "etch",
     "octicon",
     "icon"
   ],
-  "author": "Jonny Buchanan <jonathan.buchanan@gmail.com>",
+  "author": "Joe Fitzgerald <jfitzgerald@pivotal.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/insin/react-octicon/issues"
+    "url": "https://github.com/joefitzgerald/etch-octicon/issues"
   },
-  "homepage": "https://github.com/insin/react-octicon",
+  "homepage": "https://github.com/joefitzgerald/etch-octicon",
   "dependencies": {
-    "octicons": "^3.1.0"
+    "octicons": "^4.3.0"
   },
   "peerDependencies": {
-    "react": ">=0.13.0"
+    "etch": ">=0.6.3"
   },
   "devDependencies": {
-    "eslint-config-jonnybuchanan": "^2.0.1",
-    "nwb": "~0.2.0",
-    "react": "^0.14.3",
-    "react-addons-test-utils": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2017": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "standard": "^8.0.0"
+  },
+  "standard": {
+    "globals": [
+      "atom"
+    ]
   }
 }

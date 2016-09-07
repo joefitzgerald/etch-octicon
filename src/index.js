@@ -1,3 +1,3 @@
-require('octicons/octicons/octicons.css')
+require('octicons/build/font/octicons.css')
 
 module.exports = require('./Octicon')

@@ -1,22 +1,70 @@
+/** @babel */
+/** @jsx etch.dom */
+
 require('../css/Octicon.css')
+import etch from 'etch'
 
-import React, {PropTypes} from 'react'
-
-let Octicon = React.createClass({
-  propTypes: {
-    name: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    mega: PropTypes.bool,
-    spin: PropTypes.bool
-  },
-  getDefaultProps() {
-    return {
-      mega: false,
-      spin: false
+/*
+  Public: Abstract class for handling the initialization
+  boilerplate of an Etch component.
+*/
+export default class Octicon {
+  constructor (props) {
+    if (!props || !props.name) {
+      throw new Error('The name property is required')
     }
-  },
-  render() {
-    let {name, className, mega, spin, ...props} = this.props
+    if (!props.mega) {
+      props.mega = false
+    }
+    if (!props.spin) {
+      props.spin = false
+    }
+    this.props = props
+
+    etch.initialize(this)
+    Octicon.setScheduler(atom.views)
+  }
+
+  /*
+    Public: Gets the scheduler Etch uses for coordinating DOM updates.
+
+    Returns a {Scheduler}
+  */
+  static getScheduler () {
+    return etch.getScheduler()
+  }
+
+  /*
+    Public: Sets the scheduler Etch uses for coordinating DOM updates.
+
+    * `scheduler` {Scheduler}
+  */
+  static setScheduler (scheduler) {
+    etch.setScheduler(scheduler)
+  }
+
+  /*
+    Public: Updates the component's properties and re-renders it. Only the
+    properties you specify in this object will update – any other properties
+    the component stores will be unaffected.
+
+    * `props` an {Object} representing the properties you want to update
+  */
+  update (props) {
+    let oldProps = this.props
+    this.props = Object.assign({}, oldProps, props)
+    return etch.update(this)
+  }
+
+  /*
+    Public: Destroys the component, removing it from the DOM.
+  */
+  destroy () {
+    etch.destroy(this)
+  }
+
+  render () {
+    let {name, className, mega, spin} = this.props
     let classNames = [mega ? 'mega-octicon' : 'octicon', `octicon-${name}`]
     if (spin) {
       classNames.push('spin-octicon')
@@ -24,8 +72,6 @@ let Octicon = React.createClass({
     if (className) {
       classNames.push(className)
     }
-    return <span {...props} className={classNames.join(' ')}/>
+    return <span className={classNames.join(' ')} />
   }
-})
-
-export default Octicon
+}
