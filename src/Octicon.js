@@ -1,7 +1,7 @@
 /** @babel */
 /** @jsx etch.dom */
 
-require('../css/Octicon.css')
+import {svg} from 'octicons'
 import etch from 'etch'
 
 /*
@@ -65,13 +65,16 @@ export default class Octicon {
 
   render () {
     let {name, className, mega, spin} = this.props
-    let classNames = [mega ? 'mega-octicon' : 'octicon', `octicon-${name}`]
+    let classNames = [mega ? 'mega-edge-octicon' : 'edge-octicon', `edge-octicon-${name}`]
     if (spin) {
-      classNames.push('spin-octicon')
+      classNames.push('spin-edge-octicon')
     }
     if (className) {
       classNames.push(className)
     }
-    return <span className={classNames.join(' ')} />
+    let octicon = svg[name]
+    return (
+      <span innerHTML={octicon} className={classNames.join(' ')} />
+    )
   }
 }
