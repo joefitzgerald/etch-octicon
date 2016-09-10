@@ -1,6 +1,6 @@
 {
   "name": "etch-octicon",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A GitHub Octicons icon Etch component",
   "main": "./lib/index.js",
   "scripts": {
