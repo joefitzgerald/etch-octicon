@@ -1,7 +1,7 @@
-.spin-edge-octicon {
-  animation: spin-edge-octicon 2s infinite linear;
+.spin-etch-octicon {
+  animation: spin-etch-octicon 2s infinite linear;
 }
-@keyframes spin-edge-octicon {
+@keyframes spin-etch-octicon {
   0% {
     transform: rotate(0deg);
   }

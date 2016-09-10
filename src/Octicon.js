@@ -65,9 +65,9 @@ export default class Octicon {
 
   render () {
     let {name, className, mega, spin} = this.props
-    let classNames = [mega ? 'mega-edge-octicon' : 'edge-octicon', `edge-octicon-${name}`]
+    let classNames = [mega ? 'mega-etch-octicon' : 'etch-octicon', `etch-octicon-${name}`]
     if (spin) {
-      classNames.push('spin-edge-octicon')
+      classNames.push('spin-etch-octicon')
     }
     if (className) {
       classNames.push(className)
