@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/joefitzgerald/etch-octicon",
   "dependencies": {
-    "octicons": "^4.3.0"
+    "octicons": "^5.0.1"
   },
   "peerDependencies": {
     "etch": ">=0.6.3"
