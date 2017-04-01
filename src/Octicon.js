@@ -1,7 +1,7 @@
 /** @babel */
 /** @jsx etch.dom */
 
-import {svg} from 'octicons'
+import octicons from 'octicons'
 import etch from 'etch'
 
 /*
@@ -51,7 +51,7 @@ export default class Octicon {
     * `props` an {Object} representing the properties you want to update
   */
   update (props) {
-    let oldProps = this.props
+    const oldProps = this.props
     this.props = Object.assign({}, oldProps, props)
     return etch.update(this)
   }
@@ -64,15 +64,16 @@ export default class Octicon {
   }
 
   render () {
-    let {name, className, mega, spin} = this.props
-    let classNames = [mega ? 'mega-etch-octicon' : 'etch-octicon', `etch-octicon-${name}`]
+    const {name, className, mega, spin} = this.props
+    const classNames = [mega ? 'mega-etch-octicon' : 'etch-octicon', `etch-octicon-${name}`]
     if (spin) {
       classNames.push('spin-etch-octicon')
     }
     if (className) {
       classNames.push(className)
     }
-    let octicon = svg[name]
+
+    const octicon = octicons[name].toSVG()
     return (
       <span innerHTML={octicon} className={classNames.join(' ')} />
     )

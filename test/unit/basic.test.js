@@ -16,6 +16,9 @@ describe('octicon support', () => {
 
     etch.initialize(component)
     let elem = component.element
+
     expect(elem.constructor).to.be.ok
+    expect(component.element.innerHTML.startsWith('<svg')).to.be.true
+    expect(component.element.innerHTML.includes('octicon octicon-diff-added')).to.be.true
   })
 })
