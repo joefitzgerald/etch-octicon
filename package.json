@@ -1,6 +1,6 @@
 {
   "name": "etch-octicon",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A GitHub Octicons icon Etch component",
   "main": "./lib/index.js",
   "scripts": {
@@ -29,24 +29,22 @@
   },
   "homepage": "https://github.com/joefitzgerald/etch-octicon",
   "dependencies": {
-    "octicons": "^5.0.1"
+    "octicons": "^7.0.1"
   },
   "peerDependencies": {
-    "etch": "^0.12.0"
+    "etch": "^0.12.7"
   },
   "devDependencies": {
-    "etch": "^0.12.0",
     "babel-cli": "^6.24.0",
-    "babel-preset-es2017": "^6.22.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-register": "^6.24.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "chai": "^3.5.0",
     "electron": "1.3.13",
     "electron-mocha": "3.3.0",
-    "estraverse-fb": "^1.3.1",
-    "mocha": "^3.1.2",
-    "standard": "^9.0.2"
+    "estraverse-fb": "^1.3.2",
+    "etch": "^0.12.7",
+    "mocha": "^3.5.3",
+    "standard": "^10.0.3"
   },
   "standard": {
     "globals": [
